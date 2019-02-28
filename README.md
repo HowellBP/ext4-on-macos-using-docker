@@ -3,6 +3,8 @@ Create and work on an ext4 filesystem image inside of macOS using Docker for Mac
 ## 1. Install Docker
 Follow the steps outlined on [Docker's website](https://docs.docker.com/docker-for-mac/install/).
 
+[Download Docker for Mac directly](https://download.docker.com/mac/stable/Docker.dmg).
+
 ## 2. Create a working folder
 Pick a directory to start in: e.g. `mkdir -p $HOME/ext4fs`
 
