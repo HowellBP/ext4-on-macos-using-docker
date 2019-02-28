@@ -1,3 +1,3 @@
 theme: jekyll-theme-cayman
-title: "Working with EXT4 disk images in Docker for Mac"
+title: "EXT4 on macOS using Docker"
 description: "A guide to mounting and working inside ext4 partitions on macOS using Docker for Mac."
