@@ -41,7 +41,7 @@ When finished, you can unmount the directory (`umount /ext4fs`) and exit the con
 
 Note: this method does not mount external drives, as currently USB devices aren't supported in Docker for Mac. You may be able to mount partitions or other disk images, if you copy them into and mount another directory alongside your ext4 filesystem:
 ```
-docker run --privileged -it -v $HOME/ext4fs:/ext4fs -v $HOME/otherdir:/otherdir ubuntu:18.04 bash
+docker run --privileged -it --rm -v $HOME/ext4fs:/ext4fs -v $HOME/otherdir:/otherdir ubuntu:18.04 bash
 ```
 You can then use any tools available to Ubuntu to work on other disk images or partitions while inside the container, having full read-write access to your ext4 partition.
 
