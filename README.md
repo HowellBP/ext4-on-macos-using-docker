@@ -3,15 +3,13 @@ Create and work on an ext4 filesystem image inside of macOS using Docker for Mac
 ## 1. Install Docker
 Follow the steps outlined on [Docker's website](https://docs.docker.com/docker-for-mac/install/).
 
-[Download Docker for Mac directly](https://download.docker.com/mac/stable/Docker.dmg).
-
 ## 2. Create a working folder
 Pick a directory to start in: e.g. `mkdir -p $HOME/ext4fs`
 
 ## 3. Run an Ubuntu container
 Run the container in privileged mode and mount the directory you just created:
 ```
-docker run --privileged -it -v $HOME/ext4fs:/ext4fs ubuntu:18.04 bash
+docker run --privileged -it -v $HOME/ext4fs:/ext4fs ubuntu:latest bash
 ```
 
 ## 4. Create a raw disk image
@@ -41,7 +39,7 @@ When finished, you can unmount the directory (`umount /ext4fs`) and exit the con
 
 Note: this method does not mount external drives, as currently USB devices aren't supported in Docker for Mac. You may be able to mount partitions or other disk images, if you copy them into and mount another directory alongside your ext4 filesystem:
 ```
-docker run --privileged -it --rm -v $HOME/ext4fs:/ext4fs -v $HOME/otherdir:/otherdir ubuntu:18.04 bash
+docker run --privileged -it --rm -v $HOME/ext4fs:/ext4fs -v $HOME/otherdir:/otherdir ubuntu:latest bash
 ```
 You can then use any tools available to Ubuntu to work on other disk images or partitions while inside the container, having full read-write access to your ext4 partition.
 
