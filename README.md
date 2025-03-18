@@ -37,7 +37,7 @@ drwx------ 2 root root  16K Dec  5 23:47 lost+found
 ## 6. Profit
 When finished, you can unmount the directory (`umount /ext4fs`) and exit the container. Then on your host filesystem you'll have a shiny new raw ext4 image which you can then use other tools to convert to other image types, e.g. VirtualBox, VMWare, etc., using tools like [Packer](https://packer.io).
 
-Note: this method does not mount external drives, as currently USB devices aren't supported in Docker for Mac. You may be able to mount partitions or other disk images, if you copy them into and mount another directory alongside your ext4 filesystem:
+Note: this method does not mount external drives, although it may be possible to mount a partition from a USB drive (see [this article](https://blog.golioth.io/usb-docker-windows-macos/)). You can mount other external disk images, if you copy them into and mount another directory alongside your ext4 filesystem:
 ```
 docker run --privileged -it --rm -v $HOME/ext4fs:/ext4fs -v $HOME/otherdir:/otherdir ubuntu:latest bash
 ```
